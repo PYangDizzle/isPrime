@@ -1,5 +1,3 @@
-package primecalc;
-
 import java.util.Arrays;
 //import java.util.LinkedList;
 import java.util.LinkedList;
@@ -9,6 +7,23 @@ public class Prime {
 	Sieve sieve = null;
 	
 	public static void main( String[] args ) {
+		// test();
+		Prime prime = new Prime();
+		int num;
+		for( int i = 0; i < args.length; ++i ) {
+			num = Integer.parseInt( args[i] );
+			
+			if( prime.isPrime( num ) ) {
+				System.out.printf( "%d is a prime number\n", num );
+			}
+			else {
+				System.out.printf( "%d is not a prime number\n", num);
+			}
+		}
+		System.exit(0);
+	}
+	
+	static void test() {
 		System.out.println( ( Sieve.generate( 15 ) ) );
 		
 		Prime prime = new Prime();
@@ -24,7 +39,7 @@ public class Prime {
 		System.out.println(prime.sieve);
 	}
 	
-	public boolean isPrime( int n ) {
+	boolean isPrime( int n ) {
 		if( n <= 1 ) {
 			return false;
 		}
